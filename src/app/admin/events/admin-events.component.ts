@@ -1,17 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { environment } from '@env/environment';
 
 @Component({
   templateUrl: './admin-events.component.html'
 })
-export class AdminEventsComponent implements OnInit {
-
+export class AdminEventsComponent {
   constructor() { }
 
-  ngOnInit() {
-  }
-
   onOKClick() {
-    // https://calendar.google.com/calendar/embed?src=staveschurchdsm%40gmail.com&ctz=America%2FChicago
-    window.location.href = 'https://calendar.google.com/calendar/b/1/r';
+    window.location.href = environment.gcalendar;
   }
 }

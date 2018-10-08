@@ -34,6 +34,7 @@ import { InputTextComponent } from './input-text/input-text.component';
 import { PageTitleComponent } from './page-title/page-title.component';
 import { ThrobberComponent } from './throbber/throbber.component';
 import { InputSelectComponent } from '@app/shared/input-select/input-select.component';
+import { InputDateComponent } from './input-date/input-date.component';
 
 @NgModule({
   imports: [
@@ -65,6 +66,7 @@ import { InputSelectComponent } from '@app/shared/input-select/input-select.comp
   declarations: [
     BytesPipe,
     GeneralErrorComponent,
+    InputDateComponent,
     InputIntegerComponent,
     InputSearchComponent,
     InputSelectComponent,
@@ -79,6 +81,7 @@ import { InputSelectComponent } from '@app/shared/input-select/input-select.comp
     FlexLayoutModule,
     FormsModule,
     GeneralErrorComponent,
+    InputDateComponent,
     InputIntegerComponent,
     InputSearchComponent,
     InputSelectComponent,

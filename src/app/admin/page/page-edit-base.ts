@@ -42,7 +42,7 @@ export abstract class PageEditBase<TPage extends Page> implements OnInit {
     this.model = new this.modelCreator();
 
     this.saveStream.pipe(
-      debounceTime(1000)
+      debounceTime(750)
     ).subscribe(() => this.update());
 
     this.route.paramMap.subscribe((params) => this.onIdParam(params));

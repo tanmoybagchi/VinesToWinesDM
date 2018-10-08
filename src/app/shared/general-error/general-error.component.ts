@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-general-error',
+  // tslint:disable-next-line:component-selector
+  selector: 'general-error',
   templateUrl: './general-error.component.html',
   styleUrls: ['./general-error.component.scss']
 })

@@ -4,6 +4,6 @@ export class Homepage extends ValueObject {
   bannerPhotoIdentifier = '';
   bannerPhotoTransparency = 0.25;
   bannerTitleColor = 'white';
-  bannerTitle = 'Welcome to Staves Memorial United Methodist Church';
+  bannerTitle = 'Welcome to Vines To Wines DM';
   bannerSubTitle = 'A community of faith called into being by God through Jesus Christ.';
 }

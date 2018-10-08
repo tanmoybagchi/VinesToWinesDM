@@ -5,18 +5,18 @@
 export const environment = {
   production: false,
   endPoint: 'https://accounts.google.com/o/oauth2/v2/auth',
-  client_id: '125242757361-gl6ntm7h177lq7cnhvv5fg9rdtpjd15h.apps.googleusercontent.com',
+  client_id: '476036799041-9ub5f7f9kgem33aetosjm1mdcqfh9vfa.apps.googleusercontent.com',
   scope: 'https://www.googleapis.com/auth/drive',
   login_hint: 'tanmoybagchi76@gmail.com',
   login_name: 'Tanmoy Bagchi',
-  gserviceaccount: 'website@staveschurch-199209.iam.gserviceaccount.com',
+  gserviceaccount: 'webdev@webdev-218420.iam.gserviceaccount.com',
   gserviceaccountscope: 'https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/drive.readonly',
   // tslint:disable-next-line:max-line-length
-  gserviceaccountkey: '-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCF7qH+ZY/3t/Y8\nUgkzL5TnGTExp4HgNZr0CeEioSdluiwIbWEJTXF30Z7jllH5PamolSjk5XAi791/\non7lCAqz6rk58Njojemy1o9QSWDLq+iLCpZ+mJWPPqc9XsGCyEtmwworailNJYpU\n3HN9oVWWYsB6GVacMtunZvcJVmgVTcsyVZZyyOM9yqpntI2bNS4PkHoHdeSWeQg4\ndFAvXE9kiK3/pTz4qK4pII4GMKiEhlslTAQz6RfijZfWktLwDy76ECgrigkTi/jy\nup8+I3gc6986J1IxOSewznbch9sjdAosI3Xm8wUl6GE3NghwVhaGwOe52pmg+2nG\nlkbaY5rDAgMBAAECggEAJERWzG8PGZrQjEwAnsIzNZMOTa5YznBlmdC1DK4L35GW\ny99mh+DXKYVzW5iAcRgAAZ0Gelkg0O0YEzBa4UUYtNiKOMTdz7diAaH1I94C3pQZ\n/9CpqPVDhosGOWmXyATZ2iVVcyUnsvLH7yvVAD94UCVEjque1uQ0s7N/kKE7xQyr\n/41v1E8ptUb3O+PSqE8izDwlXnhHCWcp/lNmjt9H3WnMA4HMSgFDsC8KbfQ7ob/5\n9nXsiB3EFqaH4jgGOWitFZiRSOlJ7qurguQ3xGwaCMphspqc9vKt4FfG6uTu6+i4\niDeXs1U2dX0jBUxTZuxW8HJ9CNWXslM1EqziGLzZkQKBgQC7fnkDP5lKPB+4yDQC\nVbPDDrRL7kh0yQBxiG7l+f6+BHjQMnp2TJOthDMvlMO2ebtSB1MRQy1t6WgmslYZ\noe+3dMK27acmEow+su0vsqNbJdiCmfctd+gVSh388k3h2ltDwCIirLA88Kio9HxH\n0ilLpNJcbC5ZLOCBQQNUVJqYUwKBgQC23iwVCgt7xjuQuP+Hq6Pkof/lU+4Q4YqD\nfqi2O8XPOKRtX3NLnozeD2XMLVBU3Qx1d45CTQ70AWcvZO+1Ix9O7Hws0o2dBQ7m\ngWJYvIM3GSgkSaGczMRpnASNASSxGJMwkJJb64G67woJG87h+RSJyKyMXcFc5PTM\nQ58u8Qnl0QKBgC2NEnVZlDJW3RYVfZ07mQrAncj8wRmuY68xiE/TJrKff4KFYP8w\np4g2YAElUU8Z0AqjwOimu3jChg0wsn5Tu1uEwHGU11EGnI/3BGzcJ5fTYACKy2R+\nhyH0+cgkTgua8yVInoJyFfcYOMGjdDY2ttWr23ecyL3di0Wbt+VbEJwFAoGAK5+g\ngHxe9O37M7EOND074cTLmNeGyTwkoO3MLXzg2Wg3wWetx3JRRIAD1stQiI4a9MLK\niwJ6+LaE+QdpL5rrUxaTINYxti2IunBPF8AQxUoZC18NUKyAhnkTlNea+yxToJg8\ncfUig4eWq0mY9stGnP/kOa/7+r8brsbK6JXTuKECgYEAjWKOu5wYYdNONc2HampU\nY8WiTaV7gTWBPlkKE7M54bF3lNBkXSEWTI+g8ZDxiL4VuhyMxHdanxS6hajHocWH\nGmcE36SYMCfNq7Jheth3tESXGyfzoYfRIj+HFh6p0v8+i0QRMqShdN15lY5bd9D2\nyP554J8WymoPtJhb5PalffQ=\n-----END PRIVATE KEY-----\n',
-  tinyPNGKey: '2jNEHgHNtf4oSBdD2aqpkE7MEElI2jKQ',
-  rootFolder: 'Website Data',
-  assetFolder: 'assets',
-  database: 'pages.json'
+  gserviceaccountkey: '-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC6ZiEoHT9O2YRb\nx6f76f6fdJ6+w6wWvQffti2Nqm7Jyu5zEGPtjhCjekYSC92jAWRDWwpwYC6hp6zf\ni3PF2AFhYeHAKoF+1Hy5UXelHGsI/uR461RqEXrsYzVVfCBua1p0FUgZnKCeSBtP\nhUvfgow5G7DkINi4hUq8cO7hvKCRDInXVAGxm/3cbYaZenbiYCME2TywJTJ5V4ZH\nn+XDLrZSt1I1QPduPIL7nJrb8cOO3L9arFvlBMJfFxnThEv4YsS9j0vTqjzULDsi\nX7cNFnrlH1z4b+x33Ydo57ztYX731xUmsa3XyWaDbDvzE7JpmP9jAR4M6fwsMcKg\n3ex1EPphAgMBAAECggEAKmXupsw4STwq4iGA8UkhVK3XKfciHq3yq40pwW6B8r6J\nDH0u7asB192JMLOoP1qirrt3nWYTVUvpg5OZyue+MKNuESLZ/7pfgFuqhlD3e71W\nxLZqphHBzyEl0YMBcXxTv9HTa5f35Ojr5WOhhX6RXLASxWE/SoFvJXveqlQYhcVb\nacCNAxxCp5txnNxfnZbbG3r+Bbepk8mh4YbJAHSV5j3lYuAUYEbpDeWvglHVDyD6\nFyzTb9l8U/G33u1wTkzkHeEHeRuG5W2rFWVSlWA79G5tLUve/1pWs/HnqzFPu6Zl\nBAvWN7BPABe8JAY7Jkd3WDGcnbEbxWD+RyC9K/WeLQKBgQDy4XnrboKocJDTHV5V\nFjQgSWbDve9u/kjy7vT30O9A9VqCzNrYlaz3ck7COpdMiAKT2MMhH6/seHNy+Rtj\na9L8dSc5TJ0F2iZttr/ARdkq9bMVwQtwAvFu43bmBkcpdYD4Y0fHBgCFgcb1Av1c\nSrLoVx00aIgBS0WibPtMqQTLjwKBgQDEd6FD3NQG5A4jiMit9yGKTvIPbBN2uegz\nBP0cbgn5pwEld2IQNVM6MMOLP362AFfODHK914B8k3gNZmrGuPNp654X0ISwL3kT\nsRm0aMXvok8blY1Rn4GASy3WJTxSKTkG3CmnAyGZyFODA3yMRqlE6/dWuH9JXmBO\n18SrSoOjDwKBgDz4pWaYw2wNdg3JXZj2jfdc9dNFpwmyBBYYLp7XcHhaH3KegoHE\ncTtdErBnjPvFWQBMdg+mqL8wLas7Jcj7lGeT8VjNBs4lSWhZbCGUZ0QFkgNwBrMD\nyiAQMhTklpCt0saIBcjMlOzu+0cejQPSLL9uvwIdC6dngf+YZC2GcJG5AoGAIiOX\nhi9NOJVQT6RpGrGixmHJdhyVlT/gtVzcjqAgY509ecEw7RgXCjmHAR9baUzN9SP8\nnDhiP0NwzQNK8pUY1wL2SbUWGXdmVqGjkdHS8z0E+goWsGRDIIPvxxJZVP2Mx0Bi\njH7iy9IfkNh+P/HXX/6Q0CTnGVyo54pexlUAYskCgYAXCHH1+t5rve4zsjbs4Rqu\nq4nswJBRfTuaodDMShjf8s5DbjFP5lwxgCxVROnILhYHt1QBbgZVhQwcCWFITxhY\nhAAGhTEzPy9zrT9KY1uwzkKB+SmqoW2ommKIeOiq3sYfeUYaf1Rn6MbNpPq/NerO\nXxni5kWNX0soVwRFFgxESA==\n-----END PRIVATE KEY-----\n',
+  rootFolder: 'Websites',
+  assetFolder: 'vinestowinesDM_assets',
+  database: 'vinestowinesDM.json',
+  gcalendar: 'https://calendar.google.com/calendar?cid=dGFubW95YmFnY2hpNzZAZ21haWwuY29t'
 };
 
 /*

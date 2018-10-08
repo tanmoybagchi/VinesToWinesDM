@@ -11,6 +11,7 @@ import { LogLevel } from './core/logger/logger-config';
 import { EventsModule } from './events/events.module';
 import { GapiModule } from './gapi/gapi.module';
 import { HomepageModule } from './homepage/homepage.module';
+import { MinistriesModule } from './ministries/ministries.module';
 import { PageModule } from './page/page.module';
 import { PhotoModule } from './photo/photo.module';
 import { SecurityModule } from './security/security.module';
@@ -31,6 +32,7 @@ import { SharedModule } from './shared/shared.module';
     EventsModule,
     GapiModule,
     HomepageModule,
+    MinistriesModule,
     PageModule,
     PhotoModule,
     RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),

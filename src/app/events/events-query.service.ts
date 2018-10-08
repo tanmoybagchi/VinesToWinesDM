@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ServiceAccountSigninCommand } from '@app/gapi/service-account-signin-command.service';
+import { environment } from '@env/environment';
 import { map, switchMap } from 'rxjs/operators';
 import { EventList } from './events-models';
 import { EventsModule } from './events.module';
@@ -32,7 +33,7 @@ export class EventsQuery {
           headers: { 'Authorization': `${googleAccessToken.token_type} ${googleAccessToken.access_token}` }
         };
 
-        const url = 'https://www.googleapis.com/calendar/v3/calendars/staveschurchdsm@gmail.com/events';
+        const url = `https://www.googleapis.com/calendar/v3/calendars/${environment.login_hint}/events`;
 
         return this.http.get<EventList>(url, options).pipe(
           map(x => EventList.convertFromJson(x))

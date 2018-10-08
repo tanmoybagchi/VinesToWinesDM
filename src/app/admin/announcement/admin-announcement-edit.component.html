@@ -36,7 +36,7 @@
       <mat-error>{{errors?.content?.title}}</mat-error>
     </mat-form-field>
 
-    <editor [content]="model.content.description" (changed)="onContentChange($event)"></editor>
+    <editor [content]="model.content.description" (changed)="onContentChange($event)" [disabled]="readOnly"></editor>
   </mat-card-content>
 
   <mat-card-actions>

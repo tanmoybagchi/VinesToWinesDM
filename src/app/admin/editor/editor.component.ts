@@ -19,6 +19,8 @@ export class EditorComponent implements OnInit {
 
   private lastContentEmitted = '';
 
+  @Input() disabled = false;
+
   @Input()
   public set content(v: string) {
     setTimeout(() => {

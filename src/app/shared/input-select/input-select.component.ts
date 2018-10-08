@@ -1,7 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material';
-import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
-import { ErrorFocusService } from '@app/core/focus/error-focus.service';
 import { UniqueIdService } from '@app/core/unique-id.service';
 
 @Component({
@@ -25,9 +23,7 @@ export class InputSelectComponent {
   errorStateMatcher: ErrorStateMatcher;
 
   constructor(
-    private sanitizer: DomSanitizer,
     uniqueIdService: UniqueIdService,
-    private errorFocusService: ErrorFocusService
   ) {
     this.inputName = uniqueIdService.getUniqueId().toString();
     this.modelChange = new EventEmitter<number>();

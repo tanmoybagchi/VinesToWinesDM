@@ -1,7 +1,6 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
-import { ErrorFocusService } from '@app/core/focus/error-focus.service';
 import { UniqueIdService } from '@app/core/unique-id.service';
 
 @Component({
@@ -38,12 +37,10 @@ export class InputSearchComponent {
 
   inputName: string;
   errorStateMatcher: ErrorStateMatcher;
-  private readonly INTEGER_REGEXP = /^[\+\-]?\d+(,\d{3})*$/;
 
   constructor(
     private sanitizer: DomSanitizer,
     uniqueIdService: UniqueIdService,
-    private errorFocusService: ErrorFocusService
   ) {
     this.inputName = uniqueIdService.getUniqueId().toString();
     this.modelChange = new EventEmitter<string>();

@@ -1,14 +1,15 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ErrorStateMatcher } from '@angular/material';
+import { ErrorStateMatcher, MatDatepickerInputEvent } from '@angular/material';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { UniqueIdService } from '@app/core/unique-id.service';
 
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: 'input-integer',
-  templateUrl: './input-integer.component.html'
+  selector: 'input-date',
+  templateUrl: './input-date.component.html',
+  styleUrls: ['./input-date.component.scss']
 })
-export class InputIntegerComponent {
+export class InputDateComponent {
   @Input() disabled = false;
   @Input() errMsg: string;
   @Input() hint = '';
@@ -16,18 +17,18 @@ export class InputIntegerComponent {
   @Input() placeholder = '';
   @Input() required = false;
 
-  _maxlength = 15;
+  _model: Date = null;
+  @Input()
+  set model(value: Date) {
+    // tslint:disable-next-line:no-unused-expression
+    value !== null && value !== undefined && (this._model = value);
+  }
+
+  _maxlength = 10;
   @Input()
   set maxlength(value: number) {
     // tslint:disable-next-line:no-unused-expression
     !isNaN(value) && value > 0 && (this._maxlength = value);
-  }
-
-  _model = '';
-  @Input()
-  set model(value: number) {
-    // tslint:disable-next-line:no-unused-expression
-    value !== null && value !== undefined && !isNaN(value) && (this._model = value.toString());
   }
 
   _style: SafeStyle;
@@ -38,33 +39,24 @@ export class InputIntegerComponent {
 
   // tslint:disable-next-line:no-output-rename
   @Output()
-  modelChange: EventEmitter<number>;
+  modelChange: EventEmitter<Date>;
 
   inputName: string;
   errorStateMatcher: ErrorStateMatcher;
-  private readonly INTEGER_REGEXP = /^[\+\-]?\d+(,\d{3})*$/;
 
   constructor(
     private sanitizer: DomSanitizer,
-    uniqueIdService: UniqueIdService,
+    uniqueIdService: UniqueIdService
   ) {
     this.inputName = uniqueIdService.getUniqueId().toString();
-    this.modelChange = new EventEmitter<number>();
+
+    this.modelChange = new EventEmitter<Date>();
+
     this.errorStateMatcher = new ErrorStateMatcher();
     this.errorStateMatcher.isErrorState = () => String.hasData(this.errMsg);
   }
 
   onChange() {
-    if (String.isNullOrWhitespace(this._model)) {
-      this.modelChange.emit(null);
-      return;
-    }
-
-    if (!this.INTEGER_REGEXP.test(this._model)) {
-      this.modelChange.emit(NaN);
-      return;
-    }
-
-    this.modelChange.emit(Number(this._model.replace(/[\,]+/g, '')));
+    this.modelChange.emit(this._model);
   }
 }

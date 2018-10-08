@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomepageComponent } from '@app/homepage/homepage.component';
+import { MinistriesComponent } from '@app/ministries/ministries.component';
 import { PageComponent } from '@app/page/page.component';
 import { AdminGuard } from '@app/security/admin.guard';
 import { SignInComponent } from '@app/security/sign-in/sign-in.component';
@@ -18,6 +19,8 @@ export const routes: Routes = [
   { path: 'caller', component: CallerComponent },
   { path: 'error', component: ServerErrorComponent },
   { path: 'events', component: EventsComponent },
+  { path: 'ministries', component: MinistriesComponent },
+  { path: 'ministries/:kind', component: MinistriesComponent },
   { path: 'photos', component: PhotoGalleryComponent },
   { path: 'photos/:identifier', component: PhotoViewerComponent },
   { path: 'sermons', component: SermonComponent },

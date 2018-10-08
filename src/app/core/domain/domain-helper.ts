@@ -68,6 +68,13 @@ export class DomainHelper {
                 new Date(source[k]) :
                 null;
           }
+
+          if (Array.isArray(target[k]) && Array.isArray(source[k]) && Reflect.hasMetadata('design:type', target, k)) {
+            const itemType = Reflect.getMetadata('design:type', target, k);
+
+            source[k].forEach(item => target[k].push(DomainHelper.adapt(itemType, item)));
+          }
+
           break;
       }
     });

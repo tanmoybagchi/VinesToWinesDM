@@ -28,7 +28,7 @@ export class AdminPageDatabase {
     return this.get(pageToAdd.kind).pipe(
       switchMap(_ => {
         const newPage = DomainHelper.adapt(Page, pageToAdd);
-        newPage.id = Math.max(...this.pageDatabase.pages.map(x => x.id)) + 1;
+        newPage.id = this.pageDatabase.pages.length === 0 ? 1 : Math.max(...this.pageDatabase.pages.map(x => x.id)) + 1;
         newPage.identifier = this.uid();
         newPage.version = 1;
         newPage.savedBy = environment.login_name;

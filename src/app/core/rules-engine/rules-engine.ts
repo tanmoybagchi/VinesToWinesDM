@@ -56,13 +56,16 @@ export class RulesEngine {
       if (Array.isArray(propValue)) {
         this.result.errors[propertyRule.propertyName] = [];
 
-        propValue.forEach(x => {
-          const tst1 = rle.check(x);
-          if (tst1.hasErrors) {
+        for (let index = 0; index < propValue.length; index++) {
+          const item = propValue[index];
+
+          const itemRuleCheck = rle.check(item);
+
+          if (itemRuleCheck.hasErrors) {
             this.result.hasErrors = true;
-            this.result.errors[propertyRule.propertyName].push(tst1.errors);
+            this.result.errors[propertyRule.propertyName][index] = itemRuleCheck.errors;
           }
-        });
+        }
 
         return;
       }

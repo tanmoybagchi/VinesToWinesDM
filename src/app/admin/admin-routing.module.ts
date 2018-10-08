@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminMinistriesEditComponent } from '@app/admin/ministries/admin-ministries-edit.component';
 import { PageEditComponent } from '@app/admin/page/page-edit/page-edit.component';
 import { PageListComponent } from '@app/admin/page/page-list/page-list.component';
 import { AdminGuard } from '@app/security/admin.guard';
@@ -26,12 +27,13 @@ const routes: Routes = [
         children: [
           { path: 'announcement', component: AdminAnnouncementListComponent },
           { path: 'announcement/:id', component: AdminAnnouncementEditComponent },
-          { path: 'events', component: AdminEventsComponent },
           { path: 'caller', component: AdminCallerListComponent },
           { path: 'caller/:id', component: AdminCallerEditComponent },
           { path: 'dashboard', component: AdminDashboardComponent },
+          { path: 'events', component: AdminEventsComponent },
           { path: 'homepage', component: AdminHomepageListComponent },
           { path: 'homepage/:id', component: AdminHomepageEditComponent },
+          { path: 'ministries/:id', component: AdminMinistriesEditComponent },
           { path: 'photos', component: AdminPhotoListComponent },
           { path: 'sermon', component: AdminSermonListComponent },
           { path: 'sermon/:id', component: AdminSermonEditComponent },

@@ -124,11 +124,13 @@ export abstract class PageListBase<TPage extends Page, TPageListItem extends Pag
 
     const approvedPages = this.fullList.filter(x => x.status === 'Approved' && x.effectiveFrom.valueOf() <= now);
 
-    if (approvedPages[0].effectiveTo) {
-      approvedPages.filter(x => x.effectiveTo.valueOf() >= now).forEach(x => x.current = true);
-    } else {
-      const mostRecentlyApproved = Math.max(...approvedPages.map(x => x.effectiveFrom.valueOf()));
-      approvedPages.filter(x => x.effectiveFrom.valueOf() === mostRecentlyApproved).forEach(x => x.current = true);
+    if (approvedPages.length > 0) {
+      if (approvedPages[0].effectiveTo) {
+        approvedPages.filter(x => x.effectiveTo.valueOf() >= now).forEach(x => x.current = true);
+      } else {
+        const mostRecentlyApproved = Math.max(...approvedPages.map(x => x.effectiveFrom.valueOf()));
+        approvedPages.filter(x => x.effectiveFrom.valueOf() === mostRecentlyApproved).forEach(x => x.current = true);
+      }
     }
   }
 

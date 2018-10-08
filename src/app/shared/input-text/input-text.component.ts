@@ -14,9 +14,15 @@ export class InputTextComponent {
   @Input() errMsg: string;
   @Input() hint = '';
   @Input() label = '';
-  @Input() model = '';
   @Input() placeholder = '';
   @Input() required = false;
+
+  _model = '';
+  @Input()
+  set model(value: string) {
+    // tslint:disable-next-line:no-unused-expression
+    value !== null && value !== undefined && (this._model = value);
+  }
 
   _maxlength = 256;
   @Input()
@@ -49,11 +55,11 @@ export class InputTextComponent {
   }
 
   onChange() {
-    if (String.isNullOrWhitespace(this.model)) {
+    if (String.isNullOrWhitespace(this._model)) {
       this.modelChange.emit(null);
       return;
     }
 
-    this.modelChange.emit(this.model.trim());
+    this.modelChange.emit(this._model.trim());
   }
 }

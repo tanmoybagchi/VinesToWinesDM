@@ -1,10 +1,9 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CallerModule } from '@app/caller/caller.module';
 import { DomainHelper } from '@app/core/domain/domain-helper';
+import { PagesCurrentQuery } from '@app/page/pages-current-query.service';
 import { map } from 'rxjs/operators';
 import { Caller } from './caller';
-import { PagesCurrentQuery } from '@app/page/pages-current-query.service';
 
 @Injectable({ providedIn: CallerModule })
 export class CallerCurrentQuery {

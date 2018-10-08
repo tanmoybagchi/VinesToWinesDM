@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { GoogleAccessToken } from '@app/gapi/google-access-token';
-import { environment } from '@env/environment.prod';
+import { environment } from '@env/environment';
 import { Observable, of } from 'rxjs';
 import { map, share, switchMap, tap } from 'rxjs/operators';
 import { GapiModule } from './gapi.module';
@@ -52,7 +52,7 @@ export class DriveFolderQuery {
     this.data = [];
 
     this.observable = this.serviceAccountSigninCommand.execute().pipe(
-      switchMap(_ => this.onAccessToken(_)),
+      switchMap(_ => this.onServiceAccountSignin(_)),
       tap(_ => {
         // when the cached data is available we don't need the 'Observable' reference anymore
         this.observable = null;
@@ -63,7 +63,7 @@ export class DriveFolderQuery {
     );
   }
 
-  private onAccessToken(accessToken: GoogleAccessToken) {
+  private onServiceAccountSignin(accessToken: GoogleAccessToken) {
     return this.getFolderId(environment.rootFolder, null, accessToken).pipe(
       switchMap((x: { files: { id: string }[] }) => {
         this.data.push({ name: environment.rootFolder, id: x.files[0].id });
