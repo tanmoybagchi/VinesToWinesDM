@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "staves-church": {
+    "vines-to-wines-dm": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -36,7 +36,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/staves-church",
+            "outputPath": "dist/vines-to-wines-dm",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -74,18 +74,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "staves-church:build"
+            "browserTarget": "vines-to-wines-dm:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "staves-church:build:production"
+              "browserTarget": "vines-to-wines-dm:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "staves-church:build"
+            "browserTarget": "vines-to-wines-dm:build"
           }
         },
         "lint": {
@@ -102,5 +102,5 @@
       }
     }
   },
-  "defaultProject": "staves-church"
+  "defaultProject": "vines-to-wines-dm"
 }
