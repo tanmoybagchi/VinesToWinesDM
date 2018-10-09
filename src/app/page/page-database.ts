@@ -8,6 +8,7 @@ import { environment } from '@env/environment';
 import { EMPTY, Observable, of } from 'rxjs';
 import { map, share, switchMap } from 'rxjs/operators';
 import { DriveFolderQuery } from '@app/gapi/drive-folder-query.service';
+import { LocalStorageService } from '@app/core/storage/local-storage.service';
 
 @Injectable({
   providedIn: PageModule
@@ -23,6 +24,7 @@ export class PageDatabase {
     private driveFileQuery: DriveFileQuery,
     private driveFilesQuery: DriveFilesQuery,
     private driveFolderQuery: DriveFolderQuery,
+    private storage: LocalStorageService,
   ) {
     this.pages = null;
     this.initialize();
@@ -30,6 +32,13 @@ export class PageDatabase {
 
   initialize(): any {
     this.initialising = true;
+
+    const cachedItem = this.storage.get('database');
+    if (cachedItem) {
+      this.fileId = cachedItem.fileId || '';
+      this.version = cachedItem.version || 0;
+      this.pages = (cachedItem.pages || []).map(page => DomainHelper.adapt(Page, page));
+    }
 
     this.observable = this.driveFolderQuery.execute(environment.rootFolder).pipe(
       switchMap(folderId => this.onFolder(folderId)),
@@ -43,7 +52,7 @@ export class PageDatabase {
     );
   }
 
-  private onFiles(files: any[]) {
+  private onFiles(files: DriveFilesQuery.Result[]) {
     if (files.length !== 1) {
       this.pages = [];
       this.initialising = false;
@@ -64,6 +73,8 @@ export class PageDatabase {
         this.observable = null;
 
         this.pages = x.map(page => DomainHelper.adapt(Page, page));
+
+        this.storage.set('database', { fileId: this.fileId, version: this.version, pages: x });
 
         this.initialising = false;
 

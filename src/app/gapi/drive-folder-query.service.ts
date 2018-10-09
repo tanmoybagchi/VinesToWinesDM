@@ -1,5 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { LocalStorageService } from '@app/core/storage/local-storage.service';
 import { GoogleAccessToken } from '@app/gapi/google-access-token';
 import { environment } from '@env/environment';
 import { Observable, of } from 'rxjs';
@@ -17,7 +18,8 @@ export class DriveFolderQuery {
 
   constructor(
     private http: HttpClient,
-    private serviceAccountSigninCommand: ServiceAccountSigninCommand
+    private serviceAccountSigninCommand: ServiceAccountSigninCommand,
+    private storage: LocalStorageService,
   ) {
     this.initialize();
   }
@@ -49,7 +51,11 @@ export class DriveFolderQuery {
 
     this.initializing = true;
 
-    this.data = [];
+    this.data = this.storage.get('folders') || [];
+    if (this.data.length > 0) {
+      this.initializing = false;
+      return;
+    }
 
     this.observable = this.serviceAccountSigninCommand.execute().pipe(
       switchMap(_ => this.onServiceAccountSignin(_)),
@@ -58,6 +64,8 @@ export class DriveFolderQuery {
         this.observable = null;
 
         this.initializing = false;
+
+        this.storage.set('folders', this.data);
       }),
       share()
     );
