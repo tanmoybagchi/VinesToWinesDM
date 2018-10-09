@@ -1,8 +1,8 @@
 {
-  "name": "staves-church",
+  "name": "vines-to-wines-dm",
   "version": "1.0.0",
   "scripts": {
-    "build": "node_modules\\.bin\\ng build --prod --progress false --output-path docs/ --base-href /StavesChurch/ && copy docs\\index.html docs\\404.html",
+    "build": "node_modules\\.bin\\ng build --prod --progress false --output-path docs/ --base-href /VinesToWinesDM/ && copy docs\\index.html docs\\404.html",
     "serve": "node_modules\\.bin\\ng serve --aot --progress false --base-href /"
   },
   "private": true,
