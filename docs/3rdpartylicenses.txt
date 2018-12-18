@@ -857,6 +857,8 @@ gapi
 
 core
 
+mh-throbber
+
 @angular/material/list
 
 @angular/forms
@@ -1099,8 +1101,6 @@ THE SOFTWARE.
 @angular/material/progress-spinner
 
 material-cms-view
-
-mh-throbber
 
 @angular/material/expansion
 
