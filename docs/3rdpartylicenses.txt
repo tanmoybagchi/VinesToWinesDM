@@ -866,8 +866,6 @@ MIT
 
 @angular/material/core
 
-@angular/material/icon
-
 @angular/flex-layout
 MIT
 <<<<<<< HEAD
@@ -1105,6 +1103,8 @@ material-cms-view
 @angular/material/expansion
 
 mh-general-error
+
+@angular/material/icon
 
 @angular/material/menu
 
